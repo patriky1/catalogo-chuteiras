@@ -1,0 +1,26 @@
+{
+  "name": "catalogo-chuteiras",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Catálogo de chuteiras — React + Netlify Functions + Netlify Blobs",
+  "scripts": {
+    "dev": "netlify dev",
+    "dev:front": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  }
+}

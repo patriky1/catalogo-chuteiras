@@ -1,0 +1,37 @@
+# Configuração do Netlify — nada para preencher aqui.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Desenvolvimento local com "npm run dev" (Netlify CLI)
+[dev]
+  command = "npm run dev:front"
+  targetPort = 5173
+  port = 8888
+  framework = "#custom"
+
+# Site de página única (React Router): qualquer rota abre o index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Arquivos estáticos com cache longo
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
