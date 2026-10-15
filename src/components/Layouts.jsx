@@ -3,7 +3,6 @@ import { Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { Loader } from './Feedback';
-import { BootIcon } from './Icons';
 import { useAuth } from '../context/AuthContext';
 import { STORE_NAME } from '../config';
 
@@ -33,7 +32,7 @@ export function AdminLayout() {
       <header className="header header--admin">
         <div className="container header__inner">
           <Link to="/admin" className="logo">
-            <span className="logo__mark"><BootIcon width={22} height={22} /></span>
+            <img src="/logo.png" alt="" className="logo__mark" width="480" height="382" />
             <span className="logo__text">{STORE_NAME} <small>Admin</small></span>
           </Link>
           {user && (

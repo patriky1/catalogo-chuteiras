@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { STORE_NAME, STORE_WHATSAPP } from '../config';
 import { whatsappLink } from '../utils/format';
-import { BootIcon, WhatsAppIcon } from './Icons';
+import { WhatsAppIcon } from './Icons';
 
 export default function Header() {
   const contact = whatsappLink(STORE_WHATSAPP);
@@ -9,8 +9,8 @@ export default function Header() {
     <header className="header">
       <div className="container header__inner">
         <Link to="/" className="logo" aria-label={`${STORE_NAME} — página inicial`}>
-          <span className="logo__mark"><BootIcon width={22} height={22} /></span>
-          <span className="logo__text">{STORE_NAME}</span>
+          <img src="/logo.png" alt="" className="logo__mark" width="480" height="382" />
+          <span className="logo__text hide-xs">{STORE_NAME}</span>
         </Link>
         <nav className="header__nav">
           <NavLink to="/" end className="header__link">Catálogo</NavLink>
